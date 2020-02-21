@@ -82,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
     public void onCreateContextMenu(ContextMenu menu, View v,
                                     ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        MenuInflater inflator = getMenuInflater();
-        inflator.inflate(R.menu.context_menu, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.context_menu, menu);
     }
 
     @Override
@@ -95,42 +95,43 @@ public class MainActivity extends AppCompatActivity {
             case R.id.DisplayInfo:
                 switch(info.position) {
                     case 0:
-                        Intent cocoInfo = new Intent(this, InfoActivity.class);
+                        Intent cocoInfo = new Intent(MainActivity.this, InfoActivity.class);
                         cocoInfo.putExtra(TAG2, "coco");
                         if (cocoInfo.resolveActivity(getPackageManager()) != null) {
+                            Toast.makeText(getApplicationContext(), "hello", Toast.LENGTH_SHORT).show();
                             startActivity(cocoInfo);
                         }
                         return true;
                     case 1:
-                        Intent infinityInfo = new Intent(this, InfoActivity.class);
+                        Intent infinityInfo = new Intent(MainActivity.this, InfoActivity.class);
                         infinityInfo.putExtra(TAG2, "infinity");
                         if (infinityInfo.resolveActivity(getPackageManager()) != null) {
                             startActivity(infinityInfo);
                         }
                         return true;
                     case 2:
-                        Intent jokerInfo = new Intent(this, InfoActivity.class);
+                        Intent jokerInfo = new Intent(MainActivity.this, InfoActivity.class);
                         jokerInfo.putExtra(TAG2, "joker");
                         if (jokerInfo.resolveActivity(getPackageManager()) != null) {
                             startActivity(jokerInfo);
                         }
                         return true;
                     case 3:
-                        Intent knivesInfo = new Intent(this, InfoActivity.class);
+                        Intent knivesInfo = new Intent(MainActivity.this, InfoActivity.class);
                         knivesInfo.putExtra(TAG2, "knives");
                         if (knivesInfo.resolveActivity(getPackageManager()) != null) {
                             startActivity(knivesInfo);
                         }
                         return true;
                     case 4:
-                        Intent parasiteInfo = new Intent(this, InfoActivity.class);
+                        Intent parasiteInfo = new Intent(MainActivity.this, InfoActivity.class);
                         parasiteInfo.putExtra(TAG2, "parasite");
                         if (parasiteInfo.resolveActivity(getPackageManager()) != null) {
                             startActivity(parasiteInfo);
                         }
                         return true;
                     case 5:
-                        Intent uncutInfo = new Intent(this, InfoActivity.class);
+                        Intent uncutInfo = new Intent(MainActivity.this, InfoActivity.class);
                         uncutInfo.putExtra(TAG2, "uncut");
                         if (uncutInfo.resolveActivity(getPackageManager()) != null) {
                             startActivity(uncutInfo);
@@ -357,7 +358,7 @@ public class MainActivity extends AppCompatActivity {
             View row = layoutInflater.inflate(R.layout.row, parent, false);
             ImageView images = row.findViewById(R.id.image);
             TextView myTitle = row.findViewById(R.id.title);
-            TextView myYear = row.findViewById(R.id.year);
+            TextView myYear = row.findViewById(R.id.duration);
 
             images.setImageResource(rImage[position]);
             myTitle.setText(rTitle[position]);

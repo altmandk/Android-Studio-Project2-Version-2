@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Project_2_Version_2</string>
+    <string name="app_name">project_2</string>
+    <string name="uncutYear">2019</string>
+    <string name="uncutTitle">Uncut Gems</string>
+    <string name="parasiteYear">2019</string>
+    <string name="parasiteTitle">Parasite</string>
+    <string name="knivesYear">2019</string>
+    <string name="knivesTitle">Knives Out</string>
+    <string name="jokerYear">2019</string>
+    <string name="jokerTitle">Joker</string>
+    <string name="infinityYear">2018</string>
+    <string name="infinityTitle">Avengers: Infinity War</string>
+    <string name="cocoTitle">Coco</string>
+    <string name="cocoYear">2017</string>
+
 </resources>

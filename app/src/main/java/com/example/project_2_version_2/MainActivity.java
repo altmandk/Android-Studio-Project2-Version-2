@@ -20,27 +20,31 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     ListView listView;
     String TAG = "moviePic";
     String TAG2 = "movieInfo";
-    String[] mTitle = {"Coco", "Avengers: Infinity War", "Joker",
-            "Knives Out", "Parasite", "Uncut Gems"};
-    String[] mYear = {"2017", "2018", "2019", "2019", "2019", "2019"};
-    int[] mImage = {R.drawable.coco, R.drawable.infinity, R.drawable.joker,
-            R.drawable.knives, R.drawable.parasite, R.drawable.uncut};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ArrayList<Movies> movies = new ArrayList<>();
+        movies.add(new Movies ("2017", "Coco", R.drawable.coco_small));
+        movies.add(new Movies ("2018", "Avengers: Infinity War", R.drawable.infinity_small));
+        movies.add(new Movies ("2019", "Joker", R.drawable.joker_small));
+        movies.add(new Movies ("2019", "Knives Out", R.drawable.knives_small));
+        movies.add(new Movies ("2019", "Parasite", R.drawable.parasite_small));
+        movies.add(new Movies ("2019", "Uncut Gems",  R.drawable.uncut_small));
+
         listView = findViewById(R.id.listView);
-
-        MyAdapter adapter = new MyAdapter(this, mTitle, mYear, mImage);
+        MyAdapter adapter = new MyAdapter(this, movies);
         listView.setAdapter(adapter);
-
         registerForContextMenu(listView);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -98,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
                         Intent cocoInfo = new Intent(MainActivity.this, InfoActivity.class);
                         cocoInfo.putExtra(TAG2, "coco");
                         if (cocoInfo.resolveActivity(getPackageManager()) != null) {
-                            Toast.makeText(getApplicationContext(), "hello", Toast.LENGTH_SHORT).show();
                             startActivity(cocoInfo);
                         }
                         return true;
@@ -336,33 +339,31 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    class MyAdapter extends ArrayAdapter<String> {
-        Context context;
-        String[] rTitle;
-        String[] rYear;
-        int[] rImage;
-
-        MyAdapter(Context c, String[] title, String[] year, int[] image) {
-            super(c,R.layout.row, R.id.title, title);
-            this.context = c;
-            this.rTitle = title;
-            this.rYear = year;
-            this.rImage = image;
-
+    class MyAdapter extends ArrayAdapter<Movies> {
+        MyAdapter(Context c, List<Movies> movies){
+            super(c, 0, movies);
         }
 
         @NonNull
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-            View row = layoutInflater.inflate(R.layout.row, parent, false);
-            ImageView images = row.findViewById(R.id.image);
-            TextView myTitle = row.findViewById(R.id.title);
-            TextView myYear = row.findViewById(R.id.duration);
+            View row = convertView;
 
-            images.setImageResource(rImage[position]);
-            myTitle.setText(rTitle[position]);
-            myYear.setText(rYear[position]);
+            if (row == null) {
+                row = layoutInflater.inflate(R.layout.row, parent, false);
+            }
+
+            Movies currentMovie = getItem(position);
+
+            ImageView images = row.findViewById(R.id.image);
+            images.setImageResource(currentMovie.getmImage());
+
+            TextView myTitle = row.findViewById(R.id.title);
+            myTitle.setText(currentMovie.getmTitle());
+
+            TextView myYear = row.findViewById(R.id.year);
+            myYear.setText(currentMovie.getmYear());
 
             return row;
         }

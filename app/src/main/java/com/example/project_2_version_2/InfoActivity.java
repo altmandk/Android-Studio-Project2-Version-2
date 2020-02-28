@@ -28,57 +28,63 @@ public class InfoActivity extends AppCompatActivity {
                 case "coco":
                     int cocoResource = getResources().getIdentifier("@drawable/coco",
                             null, this.getPackageName());
-                    yearText.setText("Released: November 22, 2017");
-                    durationText.setText("Duration: 1h 45min");
-                    directorText.setText("Director: Lee Unkrich");
-                    starsText.setText("Starring: Anthony Gonzalez,\n                Gael Garcia Bernal,\n                Benjamin Bratt");
-                    ratingsText.setText("Ratings: IMDb: 8.4\n               Rotten Tomatoes: 97%");
+                    yearText.setText(R.string.cocoReleased);
+                    durationText.setText(R.string.cocoDuration);
+                    directorText.setText(R.string.cocoDirector);
+                    starsText.setText(R.string.cocoStars);
+                    ratingsText.setText(R.string.cocoRatings);
                     moviePicture.setImageResource(cocoResource);
-                    return;
+                    break;
                 case "infinity":
                     int infinityResource = getResources().getIdentifier("@drawable/infinity",
                             null, this.getPackageName());
-                    yearText.setText("Released: April 27, 2018");
-                    durationText.setText("Duration: 2h 29min");
-                    directorText.setText("Director: Anthony Russo,\n                Joe Russo");
-                    starsText.setText("Starring: Robert Downey Jr.,\n                Chris Hemsworth,\n                Mark Ruffalo");
-                    ratingsText.setText("Ratings: IMDb: 8.5\n               Rotten Tomatoes: 85%");                    moviePicture.setImageResource(infinityResource);
-                    return;
+                    yearText.setText(R.string.infinityReleased);
+                    durationText.setText(R.string.infinityDuration);
+                    directorText.setText(R.string.infinityDirector);
+                    starsText.setText(R.string.infinityStars);
+                    ratingsText.setText(R.string.infinityRatings);
+                    moviePicture.setImageResource(infinityResource);
+                    break;
                 case "joker":
                     int jokerResource = getResources().getIdentifier("@drawable/joker",
                             null, this.getPackageName());
-                    yearText.setText("Released: October 4, 2019");
-                    durationText.setText("Duration: 2h 2min");
-                    directorText.setText("Director: Todd Phillips");
-                    starsText.setText("Starring: Joaquin Phoenix,\n                Robert De Niro,\n                Zazie Beetz");
-                    ratingsText.setText("Ratings: IMDb: 8.6\n               Rotten Tomatoes: 68%");                    moviePicture.setImageResource(jokerResource);
-                    return;
+                    yearText.setText(R.string.jokerReleased);
+                    durationText.setText(R.string.jokerDuration);
+                    directorText.setText(R.string.jokerDirector);
+                    starsText.setText(R.string.jokerStars);
+                    ratingsText.setText(R.string.jokerRatings);
+                    moviePicture.setImageResource(jokerResource);
+                    break;
                 case "knives":
                     int knivesResource = getResources().getIdentifier("@drawable/knives",
                             null, this.getPackageName());
-                    yearText.setText("Released: November 27, 2019");
-                    durationText.setText("Duration: 2h 11min");
-                    directorText.setText("Director: Rian Johnson");
-                    starsText.setText("Starring: Daniel Craig,\n                Chris Evans,\n                Ana de Armas");
-                    ratingsText.setText("Ratings: IMDb: 8.0\n               Rotten Tomatoes: 97%");                    moviePicture.setImageResource(knivesResource);
-                    return;
+                    yearText.setText(R.string.knivesReleased);
+                    durationText.setText(R.string.knivesDuration);
+                    directorText.setText(R.string.knivesDirector);
+                    starsText.setText(R.string.knivesStars);
+                    ratingsText.setText(R.string.knivesRatings);
+                    moviePicture.setImageResource(knivesResource);
+                    break;
                 case "parasite":
                     int parasiteResource = getResources().getIdentifier("@drawable/parasite",
                             null, this.getPackageName());
-                    yearText.setText("Released: November 8, 2019");
-                    durationText.setText("Duration: 2h 12min");
-                    directorText.setText("Director: Bong Joon Ho");
-                    starsText.setText("Starring: Kang-ho Song,\n                Sun-kyun Lee,\n                Yeo-jeong Jo");
-                    ratingsText.setText("Ratings: IMDb: 8.6\n               Rotten Tomatoes: 99%");                    moviePicture.setImageResource(parasiteResource);
-                    return;
+                    yearText.setText(R.string.parasiteReleased);
+                    durationText.setText(R.string.parasiteDuration);
+                    directorText.setText(R.string.parasiteDirector);
+                    starsText.setText(R.string.parasiteStars);
+                    ratingsText.setText(R.string.parasiteRatings);
+                    moviePicture.setImageResource(parasiteResource);
+                    break;
                 case "uncut":
                     int uncutResource = getResources().getIdentifier("@drawable/uncut",
                             null, this.getPackageName());
-                    yearText.setText("Released: December 25, 2019");
-                    durationText.setText("Duration: 2h 15min");
-                    directorText.setText("Director: Benny Safdie,\n                Josh Safdie");                    starsText.setText("Starring: Anthony Gonzalez,\n                Gael Garcia Bernal,\n                Benjamin Bratt");
-                    ratingsText.setText("Ratings: IMDb: 7.7\n               Rotten Tomatoes: 92%");                    moviePicture.setImageResource(uncutResource);
-                    return;
+                    yearText.setText(R.string.uncutReleased);
+                    durationText.setText(R.string.uncutDuration);
+                    directorText.setText(R.string.uncutDirector);
+                    starsText.setText(R.string.uncutStars);
+                    ratingsText.setText(R.string.uncutRatings);
+                    moviePicture.setImageResource(uncutResource);
+                    break;
             }
         }
     }
